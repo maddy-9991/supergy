@@ -19,7 +19,7 @@ export default function Home() {
   const { data, loading, error } = useQuery(AllDevicesQuery)
 
   if (loading) return <p>Loading...</p>
-  if (error) return <p>Oh no... {error.message}</p>
+  if (error) return <p>Error Message: {error.message}</p>
 
   return (
     <div>
