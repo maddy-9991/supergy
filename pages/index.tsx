@@ -3,6 +3,7 @@ import { gql, useQuery } from '@apollo/client'
 import { devices } from './../data/devices';
 import { useUser } from '@auth0/nextjs-auth0';
 import { AwesomeLink } from '../components/AwesomeLink';
+import Button from '@mui/material/Button';
 
 const AllDevicesQuery = gql`
   query {
@@ -18,11 +19,11 @@ const AllDevicesQuery = gql`
 `
 
 export default function Home() {
-  const { data, loading, error } = useQuery(AllDevicesQuery)
-  const { user } = useUser()
+  // const { data, loading, error } = useQuery(AllDevicesQuery)
+  // const { user } = useUser()
 
-  if (loading && user) return <p>Loading...</p>
-  if (error && user) return <p>Error Message: {error.message}</p>
+  // if (loading && user) return <p>Loading...</p>
+  // if (error && user) return <p>Error Message: {error.message}</p>
 
   return (
     <div>
@@ -30,9 +31,12 @@ export default function Home() {
         <title>Supergy</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {user && (
+      {/* {user && (
             <div className="container mx-auto max-w-5xl my-20">
-            <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+          <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+          <Button variant="text">Text</Button>
+<Button variant="contained">Contained</Button>
+<Button variant="outlined">Outlined</Button>
             {data.devices.map(link => (
                 <AwesomeLink imageUrl={link.imageUrl} url={link.url}
                 title={link.title} category={link.category} description={link.description}
@@ -40,7 +44,7 @@ export default function Home() {
               ))}
             </ul>
           </div>
-      )}
+      )} */}
 
     </div>
   )

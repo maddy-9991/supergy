@@ -4,12 +4,14 @@ import Link from 'next/link'
 import { useUser } from '@auth0/nextjs-auth0'
 
 const Header = () => {
-  const { user } = useUser()
+  // const { user } = useUser()
   return (
-    <header className="text-gray-600 body-font">
+    <header className="text-gray-600 body-font" style={{
+      background: '#363740'
+    }}>
       <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
 
-        <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
+        {/* <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
           {user ? (
             <div className="flex items-center space-x-5">
             <div className="flex itemx-center justify-center mr-5 capitalize bg-blue-500 py-1 px-3 rounded-md text-white">
@@ -33,7 +35,7 @@ const Header = () => {
               </a>
             </Link>
           )}
-        </nav>
+        </nav> */}
       </div>
     </header>
   )
