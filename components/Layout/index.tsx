@@ -4,10 +4,12 @@ import Navigation from "./Navigation";
 
 const Layout = ({ children }) => {
   return (
-    <div>
-      {/* <Header /> */}
+    <div className="flex flex-row bg-gray-200">
       <Navigation/>
-      {children}
+      <div className='w-full'>
+        <Header />
+        {children}
+      </div>
     </div>
   );
 };

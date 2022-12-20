@@ -8,7 +8,9 @@ import {
   ListItemIcon,
   ListItemText,
 } from "@mui/material";
-import{ Apps, ContactMail, AssignmentInd, Home }  from "@mui/icons-material";
+import PieChartIcon from '@mui/icons-material/PieChart';
+import ConfirmationNumberIcon from '@mui/icons-material/ConfirmationNumber';
+import{ ContactMail, Lightbulb, Person, WorkspacePremium, Summarize, PeopleAlt, Settings, ChatBubbleOutline, Logout }  from "@mui/icons-material";
 import { makeStyles } from '@mui/styles';
 import theme from '../../config/theme';
 
@@ -20,7 +22,6 @@ const useStyles = makeStyles((theme) => ({
     height: "100%"
   },
   avatar: {
-    margin: "0.5rem auto",
     padding: "1rem",
     width: theme.spacing(13),
     height: theme.spacing(13)
@@ -35,36 +36,56 @@ const useStyles = makeStyles((theme) => ({
 
 const listItems = [
   {
-    listIcon: <Home />,
+    listIcon: <PieChartIcon/>,
     listText: "Übersicht"
   },
   {
-    listIcon: <AssignmentInd />,
+    listIcon: <ConfirmationNumberIcon/>,
     listText: "Elektroplanung"
   },
   {
-    listIcon: <Apps />,
+    listIcon: <Lightbulb/>,
     listText: "Energieerzeugung"
   },
   {
-    listIcon: <ContactMail />,
+    listIcon: <Person/>,
     listText: "Komponenten"
   },
   {
-    listIcon: <ContactMail />,
+    listIcon: <WorkspacePremium/>,
     listText: "Optimierung"
   },
   {
-    listIcon: <ContactMail />,
+    listIcon: <Summarize/>,
     listText: "Berichte"
   },
   {
-    listIcon: <ContactMail />,
+    listIcon: <PeopleAlt />,
     listText: "Anbieterverzeichnis"
   },
   {
-    listIcon: <ContactMail />,
+    listIcon: <Settings />,
     listText: "Einstellungen"
+  },
+  {
+    listIcon: '',
+    listText: ''
+  },
+  {
+    listIcon: '',
+    listText: ''
+  },
+  {
+    listIcon: '',
+    listText: ''
+  },
+  {
+    listIcon: <ChatBubbleOutline/>,
+    listText: 'Support'
+  },
+  {
+    listIcon: <Logout/>,
+    listText: 'Abmelden'
   }
 ];
 
@@ -72,11 +93,15 @@ export default function Navigation() {
   const classes = useStyles();
   const sideList = () => (
     <Box className={classes.menuSliderContainer}>
+      <div className="flex flex-row">
       <Avatar
         className={classes.avatar}
         src="https://i.ibb.co/rx5DFbs/avatar.png"
         alt="Juaneme8"
+        variant="square"
       />
+      </div>
+
       <Divider />
       <List>
         {listItems.map((listItem, index) => (
