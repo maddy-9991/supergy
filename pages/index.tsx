@@ -4,6 +4,7 @@ import { devices } from './../data/devices';
 import { useUser } from '@auth0/nextjs-auth0';
 import { AwesomeLink } from '../components/AwesomeLink';
 import Button from '@mui/material/Button';
+import ListBlock from '../components/ListBlock';
 
 const AllDevicesQuery = gql`
   query {
@@ -32,7 +33,22 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div>
-        {/* <div className="h-full bg-indigo-500">ffff</div> */}
+        <div className="h-full w-1/5">
+          <ListBlock/>
+          <ListBlock/>
+          <ListBlock/>
+          <ListBlock/>
+          <ListBlock/>
+          <ListBlock/>
+          <ListBlock/>
+          <ListBlock/>
+          <ListBlock/>
+          <ListBlock/>
+          <ListBlock/>
+          <ListBlock/>
+          <ListBlock/>
+          <ListBlock/>
+        </div>
       </div>
       {/* {user && (
             <div className="container mx-auto max-w-5xl my-20">
