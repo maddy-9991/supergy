@@ -1,4 +1,7 @@
 import React from 'react';
+import Image from 'next/image'
+import Divider from '@mui/material/Divider';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
 export const AwesomeLink = ({
   imageUrl,
@@ -8,26 +11,32 @@ export const AwesomeLink = ({
   description,
   id,
 }) => {
+  const myLoader = ({ src, width, quality }) => {
+    return `https://wallbox.com/media_usa/cms/home/${src}?w=${width}&q=${quality || 75}`
+  }
   return (
-    <div key={id} className="shadow  max-w-md  rounded">
-      <img src={imageUrl} />
-      <div className="p-5 flex flex-col space-y-2">
-        <p className="text-sm text-blue-500">{category}</p>
-        <p className="text-lg font-medium">{title}</p>
-        <p className="text-gray-600">{description}</p>
-        <a href={url} className="flex hover:text-blue-500">
-          {/* removes https from url */}
-          {url.replace(/(^\w+:|^)\/\//, '')}
-          <svg
-            className="w-6 h-6"
-            fill="currentColor"
-            viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"></path>
-            <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"></path>
-          </svg>
-        </a>
+    <div key={id} className="shadow border-2 border-gray-300 w-1/4 h-56 pr-5 rounded-lg mr-10">
+      <div className="w-full flex justify-center p-1">
+        <Image
+          loader={myLoader}
+          src={'PulsarPlus_Black.png'}
+          alt="Picture of the author"
+          width={86}
+          height={116}
+        />
+      </div>
+      <div className="w-full flex justify-between p-2">
+        <span className="text-lg font-bold not-italic">{title}</span>
+        <span className="text-lg font-normal not-italic">{description}</span>
+      </div>
+      <div className="w-full p-2">
+        <Divider />
+      </div>
+      <div div className="flex p-2">
+        <span className="absolute">
+          <ArrowForwardIosIcon fontSize="small" sx={{ color: '#A4A6B3' }}/>
+        </span>
+        <span className="text-lg font-normal not-italic ml-5">Details</span>
       </div>
     </div>
   );

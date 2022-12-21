@@ -32,7 +32,7 @@ export default function Home() {
         <title>Supergy</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div>
+      <div className="flex flex-row ">
         <div className="h-full w-1/5">
           <ListBlock/>
           <ListBlock/>
@@ -48,6 +48,28 @@ export default function Home() {
           <ListBlock/>
           <ListBlock/>
           <ListBlock/>
+        </div>
+        <div className="w-full flex justify-between flex-wrap p-4">
+          <AwesomeLink imageUrl={'https://wallbox.com/media_usa/cms/home/PulsarPlus_Black.png'} url={'link.url'}
+                  title={"Wallbox"} category={"link.category"} description={"7.2KW"}
+                  id={0}/>
+          <AwesomeLink imageUrl={'https://wallbox.com/media_usa/cms/home/PulsarPlus_Black.png'} url={'link.url'}
+                  title={"Wallbox"} category={"link.category"} description={"7.2KW"}
+                  id={0}/>
+          <AwesomeLink imageUrl={'https://wallbox.com/media_usa/cms/home/PulsarPlus_Black.png'} url={'link.url'}
+                  title={"Wallbox"} category={"link.category"} description={"7.2KW"}
+                  id={0}/>  
+
+<AwesomeLink imageUrl={'https://wallbox.com/media_usa/cms/home/PulsarPlus_Black.png'} url={'link.url'}
+                  title={"Wallbox"} category={"link.category"} description={"7.2KW"}
+                  id={0}/>              
+
+                  <AwesomeLink imageUrl={'https://wallbox.com/media_usa/cms/home/PulsarPlus_Black.png'} url={'link.url'}
+                  title={"Wallbox"} category={"link.category"} description={"7.2KW"}
+                  id={0}/> 
+                  <AwesomeLink imageUrl={'https://wallbox.com/media_usa/cms/home/PulsarPlus_Black.png'} url={'link.url'}
+                  title={"Wallbox"} category={"link.category"} description={"7.2KW"}
+                  id={0}/>                                
         </div>
       </div>
       {/* {user && (
