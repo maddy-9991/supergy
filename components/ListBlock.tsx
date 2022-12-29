@@ -16,7 +16,8 @@ export default function ListBlock() {
           borderRadius: 2,
           fontSize: "0.875rem",
           fontWeight: "700",
-          justifyContent: "space-between"
+          justifyContent: "space-between",
+          bgcolor: "#FFFF"
         }}
       >
         <Box sx={{ paddingTop: 1, paddingBottom: 1 }}>block</Box>
