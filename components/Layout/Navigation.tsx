@@ -19,7 +19,6 @@ const useStyles = makeStyles((theme) => ({
   menuSliderContainer: {
     width: 250,
     background: "#363740",
-    height: "100%"
   },
   avatar: {
     padding: "1rem",
