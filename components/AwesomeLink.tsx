@@ -29,10 +29,10 @@ export const AwesomeLink = ({
         <span className="text-lg font-bold not-italic">{title}</span>
         <span className="text-lg font-normal not-italic">{description}</span>
       </div>
-      <div className="w-full p-2">
+      <div className="w-full p-">
         <Divider />
       </div>
-      <div div className="flex p-2">
+      <div className="flex p-2">
         <span className="absolute">
           <ArrowForwardIosIcon fontSize="small" sx={{ color: '#A4A6B3' }}/>
         </span>

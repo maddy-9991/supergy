@@ -5,6 +5,8 @@ import { useUser } from '@auth0/nextjs-auth0';
 import { AwesomeLink } from '../components/AwesomeLink';
 import Button from '@mui/material/Button';
 import ListBlock from '../components/ListBlock';
+import FooterBlock from '../components/FooterBlock';
+import Divider from '@mui/material/Divider';
 
 const AllDevicesQuery = gql`
   query {
@@ -32,44 +34,68 @@ export default function Home() {
         <title>Supergy</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="flex flex-row ">
-        <div className="h-full w-1/5">
-          <ListBlock/>
-          <ListBlock/>
-          <ListBlock/>
-          <ListBlock/>
-          <ListBlock/>
-          <ListBlock/>
-          <ListBlock/>
-          <ListBlock/>
-          <ListBlock/>
-          <ListBlock/>
-          <ListBlock/>
-          <ListBlock/>
-          <ListBlock/>
-          <ListBlock/>
+      <div class="min-h-screen bg-slate-200">
+        <div class="relative min-h-screen">
+        <div className="flex flex-row">
+          <div className="h-full w-1/5">
+            <ListBlock/>
+            <ListBlock/>
+            <ListBlock/>
+            <ListBlock/>
+            <ListBlock/>
+            <ListBlock/>
+            <ListBlock/>
+            <ListBlock/>
+            <ListBlock/>
+            <ListBlock/>
+            <ListBlock/>
+          </div>
+          <div className="w-full flex justify-between flex-wrap p-4">
+            <AwesomeLink imageUrl={'https://wallbox.com/media_usa/cms/home/PulsarPlus_Black.png'} url={'link.url'}
+                    title={"Wallbox"} category={"link.category"} description={"7.2KW"}
+                    id={0}/>
+            <AwesomeLink imageUrl={'https://wallbox.com/media_usa/cms/home/PulsarPlus_Black.png'} url={'link.url'}
+                    title={"Wallbox"} category={"link.category"} description={"7.2KW"}
+                    id={0}/>
+            <AwesomeLink imageUrl={'https://wallbox.com/media_usa/cms/home/PulsarPlus_Black.png'} url={'link.url'}
+                    title={"Wallbox"} category={"link.category"} description={"7.2KW"}
+                    id={0}/>  
+
+            <AwesomeLink imageUrl={'https://wallbox.com/media_usa/cms/home/PulsarPlus_Black.png'} url={'link.url'}
+                    title={"Wallbox"} category={"link.category"} description={"7.2KW"}
+                    id={0}/>              
+
+                    <AwesomeLink imageUrl={'https://wallbox.com/media_usa/cms/home/PulsarPlus_Black.png'} url={'link.url'}
+                    title={"Wallbox"} category={"link.category"} description={"7.2KW"}
+                    id={0}/> 
+                    <AwesomeLink imageUrl={'https://wallbox.com/media_usa/cms/home/PulsarPlus_Black.png'} url={'link.url'}
+                    title={"Wallbox"} category={"link.category"} description={"7.2KW"}
+                    id={0}/>                                
+          </div>
         </div>
-        <div className="w-full flex justify-between flex-wrap p-4">
-          <AwesomeLink imageUrl={'https://wallbox.com/media_usa/cms/home/PulsarPlus_Black.png'} url={'link.url'}
-                  title={"Wallbox"} category={"link.category"} description={"7.2KW"}
-                  id={0}/>
-          <AwesomeLink imageUrl={'https://wallbox.com/media_usa/cms/home/PulsarPlus_Black.png'} url={'link.url'}
-                  title={"Wallbox"} category={"link.category"} description={"7.2KW"}
-                  id={0}/>
-          <AwesomeLink imageUrl={'https://wallbox.com/media_usa/cms/home/PulsarPlus_Black.png'} url={'link.url'}
-                  title={"Wallbox"} category={"link.category"} description={"7.2KW"}
-                  id={0}/>  
-
-<AwesomeLink imageUrl={'https://wallbox.com/media_usa/cms/home/PulsarPlus_Black.png'} url={'link.url'}
-                  title={"Wallbox"} category={"link.category"} description={"7.2KW"}
-                  id={0}/>              
-
-                  <AwesomeLink imageUrl={'https://wallbox.com/media_usa/cms/home/PulsarPlus_Black.png'} url={'link.url'}
-                  title={"Wallbox"} category={"link.category"} description={"7.2KW"}
-                  id={0}/> 
-                  <AwesomeLink imageUrl={'https://wallbox.com/media_usa/cms/home/PulsarPlus_Black.png'} url={'link.url'}
-                  title={"Wallbox"} category={"link.category"} description={"7.2KW"}
-                  id={0}/>                                
+          <div className="absolute bottom-20 left-0 w-full bg-slate-300 h-48">
+            <Divider sx={{ borderBottomWidth: 5 }} />
+            <div class="flex flex-row justify-between w-full pt-4 pl-6">
+               <div class="w-52 h-32">
+                  <FooterBlock title={"Grundlast"} value={"98 kVA"}/>
+               </div>
+               <div class="w-52 h-32">
+                  <FooterBlock title={"30s Spitzenlast"} value={"153 kVA"}/>
+               </div>
+               <div class="w-52 h-32">
+                  <FooterBlock title={"1s Spitzenlast"} value={"384 kVA"}/>
+               </div>
+               <div class="w-52 h-32">
+                  <FooterBlock title={"Steckdosen"} value={"400 V"}/>
+               </div>
+               <div class="w-52 h-32">
+                  <FooterBlock title={"Vsl. Energiekosten"} value={"30-40 tsd. 4$"}/>
+               </div>
+            </div>
+            <div class="flex flex-row justify-end pr-2">
+              <div class="rounded-lg p-1 border-slate-800 bg-slate-200">Berechung Stromerzeugersystem -></div>
+            </div>
+          </div>
         </div>
       </div>
       {/* {user && (

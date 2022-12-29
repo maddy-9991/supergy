@@ -93,7 +93,7 @@ export default function Navigation() {
   const classes = useStyles();
   const sideList = () => (
     <Box className={classes.menuSliderContainer}>
-      <div className="flex flex-row">
+      <div className="flex flex-row min-h-full">
       <Avatar
         className={classes.avatar}
         src="https://i.ibb.co/rx5DFbs/avatar.png"
