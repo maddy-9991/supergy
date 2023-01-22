@@ -77,7 +77,7 @@ export default function Dashboard() {
                </div>
             </div>
             <div className="flex flex-row justify-end pr-2">
-              <div className="rounded-lg p-1 border-slate-800 bg-slate-200">Berechung Stromerzeugersystem -></div>
+              <div className="rounded-lg p-1 border-slate-800 bg-slate-200">Berechung Stromerzeugersystem -{'>'}</div>
             </div>
           </div>
         </div>
