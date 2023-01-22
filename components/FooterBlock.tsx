@@ -9,7 +9,7 @@ export default function FooterBlock({title, value}) {
     <Box>
       <Card variant="outlined">
         <CardContent>
-        <Typography sx={{ fontSize: 14, textAlign: 'center' }} color="text.secondary" allign="center">
+        <Typography sx={{ fontSize: 14, textAlign: 'center' }}>
             {title}
         </Typography>
         <Typography sx={{ fontSize: 28, textAlign: 'center' }} variant="body2">
