@@ -10,109 +10,107 @@ import {
 } from "@mui/material";
 import PieChartIcon from '@mui/icons-material/PieChart';
 import ConfirmationNumberIcon from '@mui/icons-material/ConfirmationNumber';
-import{ ContactMail, Lightbulb, Person, WorkspacePremium, Summarize, PeopleAlt, Settings, ChatBubbleOutline, Logout }  from "@mui/icons-material";
-import { makeStyles } from '@mui/styles';
+import{ Lightbulb, Person, WorkspacePremium, Summarize, PeopleAlt, Settings, ChatBubbleOutline, Logout }  from "@mui/icons-material";
 import theme from '../../config/theme';
-
-
-const useStyles = makeStyles((theme) => ({
-  menuSliderContainer: {
-    width: 250,
-    background: "#363740",
-  },
-  avatar: {
-    padding: "1rem",
-    width: theme.spacing(13),
-    height: theme.spacing(13)
-  },
-  listItem: {
-    color: "#A4A6B3",
-    '&:hover': {
-      color: '#2FD5C1'
-    },
-  }
-}));
+import Link from 'next/link'
+import { navigationRoutes } from "../../routes/NavigationRoutes";
 
 const listItems = [
   {
     listIcon: <PieChartIcon/>,
-    listText: "Übersicht"
+    listText: "Übersicht",
+    route: navigationRoutes.ABOUT
   },
   {
     listIcon: <ConfirmationNumberIcon/>,
-    listText: "Elektroplanung"
+    listText: "Elektroplanung",
+    route: navigationRoutes.DASHBOARD
   },
   {
     listIcon: <Lightbulb/>,
-    listText: "Energieerzeugung"
+    listText: "Energieerzeugung",
+    route: navigationRoutes.ABOUT
   },
   {
     listIcon: <Person/>,
-    listText: "Komponenten"
+    listText: "Komponenten",
+    route: navigationRoutes.ABOUT
   },
   {
     listIcon: <WorkspacePremium/>,
-    listText: "Optimierung"
+    listText: "Optimierung",
+    route: navigationRoutes.ABOUT
   },
   {
     listIcon: <Summarize/>,
-    listText: "Berichte"
+    listText: "Berichte",
+    route: navigationRoutes.ABOUT
   },
   {
     listIcon: <PeopleAlt />,
-    listText: "Anbieterverzeichnis"
+    listText: "Anbieterverzeichnis",
+    route: navigationRoutes.ABOUT
   },
   {
     listIcon: <Settings />,
-    listText: "Einstellungen"
+    listText: "Einstellungen",
+    route: navigationRoutes.ABOUT
   },
   {
     listIcon: '',
-    listText: ''
+    listText: '',
+    route: ''
   },
   {
     listIcon: '',
-    listText: ''
+    listText: '',
+    route: ''
   },
   {
     listIcon: '',
-    listText: ''
+    listText: '',
+    route: ''
   },
   {
     listIcon: <ChatBubbleOutline/>,
-    listText: 'Support'
+    listText: 'Support',
+    route: navigationRoutes.ABOUT
   },
   {
     listIcon: <Logout/>,
-    listText: 'Abmelden'
+    listText: 'Abmelden',
+    route: navigationRoutes.ABOUT
   }
 ];
 
 export default function Navigation() {
-  const classes = useStyles();
   const sideList = () => (
-    <Box className={classes.menuSliderContainer}>
-      <div className="flex flex-row min-h-full">
-      <Avatar
-        className={classes.avatar}
-        src="https://i.ibb.co/rx5DFbs/avatar.png"
-        alt="Juaneme8"
-        variant="square"
-      />
-      </div>
+      <Box sx={{width: 250,background: "#363740", height:'100%'}}>
+          <Avatar
+            src="https://i.ibb.co/rx5DFbs/avatar.png"
+            alt="Juaneme8"
+            variant="square"
+            sx={{    padding: "1rem",
+            width: theme.spacing(13),
+            height: theme.spacing(13)}}
+          />
+          <List>
+            {listItems.map((listItem, index) => (
+              <Link href={listItem.route} key={index}>
+                <ListItem sx={{color: "#A4A6B3"}} key={index}>
+                  <ListItemIcon sx={{color: "#A4A6B3"}}>
+                    {listItem.listIcon}
+                  </ListItemIcon>
+                  <ListItemText primary={listItem.listText} />
+              </ListItem>
+              </Link>
 
-      <Divider />
-      <List>
-        {listItems.map((listItem, index) => (
-          <ListItem className={classes.listItem} button key={index}>
-            <ListItemIcon className={classes.listItem}>
-              {listItem.listIcon}
-            </ListItemIcon>
-            <ListItemText primary={listItem.listText} />
-          </ListItem>
-        ))}
-      </List>
-    </Box>
+            ))}
+          </List>
+
+        <Divider />
+
+      </Box>
   );
 
   return (
