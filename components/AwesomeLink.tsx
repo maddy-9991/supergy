@@ -15,7 +15,7 @@ export const AwesomeLink = ({
     return `https://wallbox.com/media_usa/cms/home/${src}?w=${width}&q=${quality || 75}`
   }
   return (
-    <div key={id} className="shadow border-2 border-gray-300 w-1/4 h-56 pr-5 rounded-lg mr-10 bg-white">
+    <div key={id} className="shadow border-2 border-gray-300 w-1/4 h-auto pr-5 rounded-lg mr-10 bg-white">
       <div className="w-full flex justify-center p-1">
         <Image
           loader={myLoader}

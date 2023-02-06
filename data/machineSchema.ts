@@ -1,56 +1,161 @@
 export const machineSchema = {
-    'Manufacturer': {
-      prop: 'manufacturer'
+    'Type': {
+        prop: 'type',
     },
-    'Product': {
-      prop: 'product'
+    'Subtype': {
+        prop: 'subtype',
+    },
+    'Manufacturer': {
+        prop: 'manufacturer',
+    },
+    'Model': {
+        prop: 'model',
+    },
+    'Name': {
+        prop: 'name',
+    },
+    'SOP': {
+        prop: 'SOP',
+    },
+    'Status': {
+        prop: 'status',
+    },
+    'Drive': {
+        prop: 'drive',
+    },
+    'Batteriekapazität': {
+        prop: 'batteriekapazität',
+    },
+    'Batterietechnologie': {
+        prop: 'batterietechnologie',
+    },
+    'Batteriespannung': {
+        prop: 'batteriespannung',
+    },
+    'Batterielaufzeit / min': {
+        prop: 'batterielaufzeitMin',
+    },
+    'Batteriereichweite': {
+        prop: 'batteriereichweite',
+    },
+    'Ladegeschwindigkeit Langsam': {
+        prop: 'ladegeschwindigkeitLangsam',
+    },
+    'Ladegeschwindigkeit Schnell': {
+        prop: 'ladegeschwindigkeitSchnell',
+    },
+    'Schutzklasse': {
+        prop: 'schutzklasse',
+    },
+    'Verbrauch': {
+        prop: 'verbrauch',
+    },
+    'Type of consumer': {
+        prop: 'typeOfConsumer',
+    },
+    'Conversion Peak 1s <> Rated Power': {
+        prop: 'conversionPeakRatedPower',
+    },
+    'Gleichzeitigkeitsfaktor': {
+        prop: 'gleichzeitigkeitsfaktor',
+    },
+    'Peak 1s': {
+        prop: 'peak1s',
+    },
+    'Peak 10s': {
+        prop: 'peak10s',
+    },
+    'Peak 30s': {
+        prop: 'peak30s',
+    },
+    'Rated Power / kVA': {
+        prop: 'ratedPowerKVA',
+    },
+    'Rated Power / kW': {
+        prop: 'type',
+    },
+    'Rated Current / A': {
+        prop: 'ratedCurrentA',
+    },
+    'Kabellänge / m': {
+        prop: 'kabellängeM',
+    },
+    'Gewicht / kg': {
+        prop: 'gewichtKg',
+    },
+    'Machine-specific Characteristics 1': {
+        prop: 'machineSpecificCharacteristics1',
+    },
+    'Machine-specific Characteristics 2': {
+        prop: 'machineSpecificCharacteristics2',
+    },
+    'Machine-specific Characteristics 3': {
+        prop: 'machineSpecificCharacteristics3',
+    },
+    'Machine-specific Characteristics 4': {
+        prop: 'machineSpecificCharacteristics4',
+    },
+    'Hoist gear FU / kW': {
+        prop: 'hoistGearFUkW',
+    },
+    'Slewing gear FU /kW': {
+        prop: 'slewingGearFUkW',
+    },
+    'Trolley travel gear FU / kW' : {
+        prop: 'trolleyTravelGearFUKW',
+    },
+    'Socket': {
+        prop: 'socket',
+    },
+    'Ladesäule': {
+        prop: 'ladesäule',
     },
     'Hersteller': {
-        prop: 'hersteller'
+        prop: 'hersteller',
     },
-    'Serial Number': {
-        prop: 'serialNumber'
+    'Typ': {
+        prop: 'typ',
     },
-    'Retrofitted by': {
-        prop: 'retrofittedBy'
+    'Kraftstoff': {
+        prop: 'kraftstoff',
     },
-    'Weight': {
-        prop: 'weight'
+    'Stage': {
+        prop: 'stage',
     },
-    'Power Source': {
-        prop: 'powerSource'
+    'kW': {
+        prop: 'kW',
     },
-    'Battery/Drive Supplier': {
-        prop: 'batteryDriveSupplier'
+    'Emission regulation': {
+        prop: 'emissionRegulation',
     },
-    'Power Capacity': {
-        prop: 'powerCapacity'
+    'Acquistion Cost': {
+        prop: 'acquistionCost',
     },
-    'Charging Time': {
-        prop: 'chargingTime'
+    'TCO': {
+        prop: 'TCO',
     },
-    'Operating Time': {
-        prop: 'operatingTime'
+    'CO2 Emission': {
+        prop: 'cO2Emission',
     },
-    'Range': {
-        prop: 'range'
+    'Anschaffungspreis': {
+        prop: 'anschaffungspreis',
     },
-    'Engine': {
-        prop: 'engine'
+    'Miete / Tag': {
+        prop: 'mieteTag',
     },
-    'Operating width': {
-        prop: 'operatingWidth'
+    'Number': {
+        prop: 'number',
     },
-    'Load capacity': {
-        prop: 'loadCapacity'
+    'Belongs to microgrid': {
+        prop: 'belongsToMicrogrid',
     },
-    'FYI': {
-        prop: 'FYI',
+    'Homepage': {
+        prop: 'homepage',
     },
-    'Availability': {
-        prop: 'availability'
+    'Comments': {
+        prop: 'comments',
     },
-    'Link': {
-        prop: 'link'
+    '2. Link': {
+        prop: 'linkPic',
     },
 }

@@ -4,9 +4,8 @@ import { machineSchema } from '../data/machineSchema';
 
 const AddData = () => {
     const [machineData, setmachineData] = useState({})
-    const rows = '';
     const uploadCsv = (event) => {
-        readXlsxFile(event.target.files[0], {schema: machineSchema, includeNullValues: true}).then((rows) => {
+        readXlsxFile(event.target.files[0],{schema: machineSchema, includeNullValues: true, sheet: 4}).then(({rows, errors}) => {
          setmachineData(rows)
         })
     }

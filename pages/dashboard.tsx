@@ -5,13 +5,20 @@ import FooterBlock from '../components/FooterBlock';
 import Divider from '@mui/material/Divider';
 import readXlsxFile from 'read-excel-file'
 import { machineSchema } from '../data/machineSchema';
+import AddCircleOutlineOutlinedIcon from '@mui/icons-material/AddCircleOutlineOutlined';
+import { useState } from 'react';
+import { Button } from '@mui/material';
+
 
 
 export default function Dashboard() {
-
-
-
-
+  const [machineData, setmachineData] = useState([])
+  const uploadCsv = (event) => {
+      readXlsxFile(event.target.files[0],{schema: machineSchema, includeNullValues: true, sheet: 4}).then(({rows, errors}) => {
+        console.log(rows.length)
+       setmachineData(rows)
+      })
+  }
   return (
     <div>
       <Head>
@@ -20,6 +27,12 @@ export default function Dashboard() {
       </Head>
       <div className="min-h-screen bg-slate-200">
         <div className="relative min-h-screen">
+        <Button
+          variant="contained"
+          component="label">
+          Upload File
+          <input type="file" id="input" onChange={uploadCsv}/>
+        </Button>
         <div className="flex flex-row">
           <div className="h-full w-1/5">
             <ListBlock/>
@@ -35,7 +48,16 @@ export default function Dashboard() {
             <ListBlock/>
           </div>
           <div className="w-full flex justify-between flex-wrap p-4">
-            <AwesomeLink imageUrl={'https://wallbox.com/media_usa/cms/home/PulsarPlus_Black.png'} url={'link.url'}
+
+            {machineData.map((machine: any, index: number) =>{
+              return (
+                <AwesomeLink imageUrl={'https://wallbox.com/media_usa/cms/home/PulsarPlus_Black.png'} url={'link.url'}
+                title={`${machine.manufacturer}-${machine.model}`} category={"link.category"} description={`${machine.peak10s || '-'} kW`}
+                id={0} key={index}/>
+              )
+            })}
+
+            {/* <AwesomeLink imageUrl={'https://wallbox.com/media_usa/cms/home/PulsarPlus_Black.png'} url={'link.url'}
                     title={"Wallbox"} category={"link.category"} description={"7.2KW"}
                     id={0}/>
             <AwesomeLink imageUrl={'https://wallbox.com/media_usa/cms/home/PulsarPlus_Black.png'} url={'link.url'}
@@ -54,7 +76,7 @@ export default function Dashboard() {
                     id={0}/> 
                     <AwesomeLink imageUrl={'https://wallbox.com/media_usa/cms/home/PulsarPlus_Black.png'} url={'link.url'}
                     title={"Wallbox"} category={"link.category"} description={"7.2KW"}
-                    id={0}/>                                
+                    id={0}/>                                 */}
           </div>
         </div>
           <div className="fixed bottom-0 bg-slate-300 h-48 w-10/12">
