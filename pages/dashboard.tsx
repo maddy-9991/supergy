@@ -18,7 +18,7 @@ export default function Dashboard() {
       readXlsxFile(event.target.files[0],{schema: machineSchema, includeNullValues: true, sheet: 4}).then(({rows, errors}) => {
        setmachineData(rows)
        let tempTypes = [];
-       rows.forEach(element => {
+       rows.forEach((element: any) => {
         if(!tempTypes.includes(element.type)) {
           tempTypes.push(element.type)
         }
