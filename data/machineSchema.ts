@@ -72,7 +72,7 @@ export const machineSchema = {
         prop: 'ratedPowerKVA',
     },
     'Rated Power / kW': {
-        prop: 'type',
+        prop: 'ratedPowerKW',
     },
     'Rated Current / A': {
         prop: 'ratedCurrentA',

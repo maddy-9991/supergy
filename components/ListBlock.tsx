@@ -1,7 +1,12 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
+import { type } from "os";
 
-export default function ListBlock() {
+interface propsTypes {
+  name: string;
+}
+
+export default function ListBlock({name}:propsTypes) {
   return (
     <div style={{ width: "100%" }}>
       <Box
@@ -20,7 +25,7 @@ export default function ListBlock() {
           bgcolor: "#FFFF"
         }}
       >
-        <Box sx={{ paddingTop: 1, paddingBottom: 1 }}>block</Box>
+        <Box sx={{ paddingTop: 1, paddingBottom: 1 }}>{name}</Box>
         <Box
           sx={{
             display: "flex",

@@ -13,10 +13,17 @@ import { Button } from '@mui/material';
 
 export default function Dashboard() {
   const [machineData, setmachineData] = useState([])
+  const [types, setTypes] = useState<string[]>([])
   const uploadCsv = (event) => {
       readXlsxFile(event.target.files[0],{schema: machineSchema, includeNullValues: true, sheet: 4}).then(({rows, errors}) => {
-        console.log(rows.length)
        setmachineData(rows)
+       let tempTypes = [];
+       rows.forEach(element => {
+        if(!tempTypes.includes(element.type)) {
+          tempTypes.push(element.type)
+        }
+       });
+       setTypes(tempTypes)
       })
   }
   return (
@@ -30,53 +37,25 @@ export default function Dashboard() {
         <Button
           variant="contained"
           component="label">
-          Upload File
+          Upload File machines
           <input type="file" id="input" onChange={uploadCsv}/>
         </Button>
         <div className="flex flex-row">
           <div className="h-full w-1/5">
-            <ListBlock/>
-            <ListBlock/>
-            <ListBlock/>
-            <ListBlock/>
-            <ListBlock/>
-            <ListBlock/>
-            <ListBlock/>
-            <ListBlock/>
-            <ListBlock/>
-            <ListBlock/>
-            <ListBlock/>
-          </div>
-          <div className="w-full flex justify-between flex-wrap p-4">
-
-            {machineData.map((machine: any, index: number) =>{
+            {types.map((type: string, index: number) => {
               return (
-                <AwesomeLink imageUrl={'https://wallbox.com/media_usa/cms/home/PulsarPlus_Black.png'} url={'link.url'}
-                title={`${machine.manufacturer}-${machine.model}`} category={"link.category"} description={`${machine.peak10s || '-'} kW`}
-                id={0} key={index}/>
+                <ListBlock name={type} key={index}/>
               )
             })}
-
-            {/* <AwesomeLink imageUrl={'https://wallbox.com/media_usa/cms/home/PulsarPlus_Black.png'} url={'link.url'}
-                    title={"Wallbox"} category={"link.category"} description={"7.2KW"}
-                    id={0}/>
-            <AwesomeLink imageUrl={'https://wallbox.com/media_usa/cms/home/PulsarPlus_Black.png'} url={'link.url'}
-                    title={"Wallbox"} category={"link.category"} description={"7.2KW"}
-                    id={0}/>
-            <AwesomeLink imageUrl={'https://wallbox.com/media_usa/cms/home/PulsarPlus_Black.png'} url={'link.url'}
-                    title={"Wallbox"} category={"link.category"} description={"7.2KW"}
-                    id={0}/>  
-
-            <AwesomeLink imageUrl={'https://wallbox.com/media_usa/cms/home/PulsarPlus_Black.png'} url={'link.url'}
-                    title={"Wallbox"} category={"link.category"} description={"7.2KW"}
-                    id={0}/>              
-
-                    <AwesomeLink imageUrl={'https://wallbox.com/media_usa/cms/home/PulsarPlus_Black.png'} url={'link.url'}
-                    title={"Wallbox"} category={"link.category"} description={"7.2KW"}
-                    id={0}/> 
-                    <AwesomeLink imageUrl={'https://wallbox.com/media_usa/cms/home/PulsarPlus_Black.png'} url={'link.url'}
-                    title={"Wallbox"} category={"link.category"} description={"7.2KW"}
-                    id={0}/>                                 */}
+          </div>
+          <div className="w-full flex justify-between flex-wrap p-4">
+          {machineData.map((machine: any, index: number) =>{
+            return (
+              <AwesomeLink imageUrl={'https://wallbox.com/media_usa/cms/home/PulsarPlus_Black.png'} url={'link.url'}
+              title={`${machine.manufacturer}-${machine.model}`} category={"link.category"} description={`${machine.peak10s || '-'} kW`}
+              id={0} key={index}/>
+            )
+          })}
           </div>
         </div>
           <div className="fixed bottom-0 bg-slate-300 h-48 w-10/12">
