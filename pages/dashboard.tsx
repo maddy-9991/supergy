@@ -51,9 +51,7 @@ export default function Dashboard() {
           <div className="w-full flex justify-between flex-wrap p-4">
           {machineData.map((machine: any, index: number) =>{
             return (
-              <AwesomeLink imageUrl={'https://wallbox.com/media_usa/cms/home/PulsarPlus_Black.png'} url={'link.url'}
-              title={`${machine.manufacturer}-${machine.model}`} category={"link.category"} description={`${machine.peak10s || '-'} kW`}
-              id={0} key={index}/>
+              <AwesomeLink key={index} machine={machine}/>
             )
           })}
           </div>
