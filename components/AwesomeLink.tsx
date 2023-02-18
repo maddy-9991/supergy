@@ -2,12 +2,7 @@ import React, { useState } from 'react';
 import Image from 'next/image'
 import Divider from '@mui/material/Divider';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import Button from '@mui/material/Button/Button';
-import Dialog from '@mui/material/Dialog/Dialog';
-import DialogTitle from '@mui/material/DialogTitle/DialogTitle';
-import DialogContent from '@mui/material/DialogContent/DialogContent';
-import DialogActions from '@mui/material/DialogActions/DialogActions';
-import DialogContentText from '@mui/material/DialogContentText/DialogContentText';
+import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } from '@mui/material';
 import FooterBlock from './FooterBlock';
 
 export const AwesomeLink = ({

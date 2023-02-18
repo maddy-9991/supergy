@@ -5,7 +5,6 @@ import FooterBlock from '../components/FooterBlock';
 import Divider from '@mui/material/Divider';
 import readXlsxFile from 'read-excel-file'
 import { machineSchema } from '../data/machineSchema';
-import AddCircleOutlineOutlinedIcon from '@mui/icons-material/AddCircleOutlineOutlined';
 import { useState } from 'react';
 import { Button } from '@mui/material';
 
